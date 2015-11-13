@@ -3,6 +3,7 @@ from mysite.views import *
 
 urlpatterns = patterns('',
     ('^home/$',index),
+    ('^$',index),
     ('^search/$',search),
     ('^search/$',search),
     ('^delete/$',delete),
