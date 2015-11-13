@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索结果</title>
+<style type="text/css">
+body {
+	background-color: #FFC;
+}
+</style>
+</head>
+
+<body>
+<h1 align="center">搜索结果</h1>
+<div align="center">
+  <table width="900" border="1">
+    <tr>
+      <th width="150">书名</th>
+      <th width="150">ISBN</th>
+      <th width="150">作者</th>
+      <th width="150">出版社</th>
+      <th width="150">出版日期</th>
+      <th width="150">价格</th>
+      <th width="150">&nbsp;</th>
+      </tr>
+    {% for book in book_list %}
+    <tr>
+      <td><a href="/detail/?ID={{book.isbn}}">{{book.title}}</a></td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.author.name}}</td>
+      <td>{{book.publisher}}</td>
+      <td>{{book.publishDate}}</td>
+      <td>{{book.price}}</td>
+      <td><a href="/delete/?bookid={{book.isbn}}"><div align="center">删除</div></td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图书管理</title>
+<style type="text/css">
+.search {
+	padding-left: 200px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: auto;
+	padding-right: 50px;
+	border: thin solid #CCC;
+	background-color: #FF9;
+}
+.all {
+	width: auto;
+	margin-top: 10px;
+	border: thin solid #CCC;
+	padding-left: 10px;
+	background-color: #FF9;
+}
+</style>
+</head>
+
+<body>
+<h1 align="center">图书管理</h1>
+<div class="search"><form action="/search/" method="get">
+  <input type="text" name="searchString" />
+  <input type="submit" name="button" id="button" value="搜索" />
+</form>
+</div>
+<div class="all" align="center">
+<h1>所有图书</h1>
+<p><a href="/author/">添加图书</a></p>
+<table border="1">
+  <tr>
+    <td width="170">ISBN</td>
+    <td width="170">书名</td>
+    <td width="170">作者</td>
+    <td width="170">出版社</td>
+    <td width="170">出版时间</td>
+    <td width="170">价格</td>
+    <td width="170">&nbsp;</td>
+  </tr>
+  {%for book in Book_list%}
+  <tr>
+  	<td  width="170">{{book.isbn}}</td>
+    <td  width="170"><a href="/detail/?ID={{book.isbn}}">{{book.title}}</a></td>
+    <td  width="170">{{book.author.name}}</td>
+    <td  width="170">{{book.publisher}}</td>
+    <td  width="170">{{book.publishDate}}</td>
+    <td  width="170">{{book.price}}</td>
+    <td  width="170"><a href="/delete/?bookid={{book.isbn}}">删除</a></td>
+  </tr>
+  {%endfor%}
+</table>
+
+</div>
+</body>
+</html>

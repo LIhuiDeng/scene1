@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加图书</title>
+<style type="text/css">
+body {
+	background-color: #FFC;
+}
+</style>
+</head>
+
+<body>
+<h1 align="center">添加图书</h1>
+<div >
+	<form action="/submit/" method="get">
+   <p align="center">ISBN：
+    <input type="text" name="isbn" />
+  </p>
+  <p align="center">图书名：
+    <input type="text" name="bookname" />
+  </p>
+  <p align="center">
+    出版社：
+    <input type="text" name="publisher" />
+  </p>
+  <p align="center">出版时间：
+  <input type="text" name="publishdate" />
+  </p>
+  <p align="center">价格：
+  <input type="text" name="price"/>
+  </p>
+  <div align="center">
+    <input type="hidden" value="{{authorid}}" name="authorid" />
+  </div>
+  <p align="center">
+    <input type="submit" name="button2" value="提交" />
+  </p>
+</form></div>
+</body>
+</html>
